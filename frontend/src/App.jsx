@@ -364,14 +364,7 @@ function App() {
               )}
             </div>
 
-            {/* Quick Demo Credentials */}
-            <div style={{ marginTop: '2rem', padding: '1rem', border: '1px dashed var(--border-color)', borderRadius: '8px', fontSize: '0.85rem' }}>
-              <strong style={{ color: 'var(--color-primary)' }}>Quick Demo Logins:</strong>
-              <div style={{ marginTop: '0.5rem', display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-                <div>🙋‍♂️ Student: <code style={{color: '#fff'}}>student@test.com</code> / <code style={{color: '#fff'}}>password123</code></div>
-                <div>🏢 Owner: <code style={{color: '#fff'}}>owner@test.com</code> / <code style={{color: '#fff'}}>password123</code></div>
-              </div>
-            </div>
+            
 
           </div>
         </div>
