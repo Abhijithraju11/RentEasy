@@ -30,12 +30,12 @@ app.use('/uploads', express.static(uploadsDir));
 app.use('/api/auth', authRoutes);
 app.use('/api/properties', propertyRoutes);
 
-// Serve static files from the React frontend build
-const frontendBuildDir = path.join(__dirname, '../frontend/dist');
-if (fs.existsSync(frontendBuildDir)) {
-  app.use(express.static(frontendBuildDir));
+// Serve static frontend files in production
+const frontendDistPath = path.join(__dirname, '../frontend/dist');
+if (fs.existsSync(frontendDistPath)) {
+  app.use(express.static(frontendDistPath));
   app.get('*', (req, res) => {
-    res.sendFile(path.join(frontendBuildDir, 'index.html'));
+    res.sendFile(path.join(frontendDistPath, 'index.html'));
   });
 } else {
   // Global default route (only if frontend build doesn't exist)
@@ -43,7 +43,6 @@ if (fs.existsSync(frontendBuildDir)) {
     res.send('RentEasy Student Rental API is Running.');
   });
 }
-
 // Start Server
 app.listen(PORT, () => {
   console.log(`>>> Server is running on port ${PORT}`);
