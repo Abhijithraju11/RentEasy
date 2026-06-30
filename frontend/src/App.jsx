@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
-const BACKEND_URL = 'http://localhost:5001';
+const BACKEND_URL = window.location.origin.includes('localhost') ? 'http://localhost:5001' : '';
 
 function App() {
   // Session & Auth State

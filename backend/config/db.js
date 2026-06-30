@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const fs = require('fs');
 const path = require('path');
 
+
 const USERS_FILE = path.join(__dirname, '../users.json');
 const PROPERTIES_FILE = path.join(__dirname, '../properties.json');
 
@@ -25,7 +26,7 @@ const writeJSON = (filePath, data) => {
 
 const dbState = {
   isMongoConnected: false
-};
+};                     //json or mongodb
 
 const connectDB = async () => {
   if (process.env.MONGODB_URI) {
@@ -43,6 +44,7 @@ const connectDB = async () => {
   }
 };
 
+//make functions and variables available to other files.
 module.exports = {
   connectDB,
   dbState,
