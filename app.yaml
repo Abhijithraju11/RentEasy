@@ -1,0 +1,8 @@
+runtime: nodejs20
+env: standard
+
+# This tells App Engine to run the start script in package.json
+# We'll configure that start script to run the backend server
+handlers:
+  - url: /.*
+    script: auto
